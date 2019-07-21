@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import DocReady from 'es6-docready'
 import Dom from 'es6-dom'
-import Picker from '../src/month-picker'
+import Picker from 'month-picker'
 
     
     
