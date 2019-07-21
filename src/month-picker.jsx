@@ -113,12 +113,14 @@ export default class MonthPicker extends Component {
         onClickAway: PropTypes.func,
         theme: PropTypes.string,
         show: PropTypes.bool,
+        renderFooter: PropTypes.func,
     }
     static defaultProps = {
         years: getYearsByNum(5),
         onChange(year, month, idx) {},
         theme: 'light',
         show: false,
+        renderFooter: () => {},
     }
 
     constructor(props, context) {
@@ -329,6 +331,7 @@ export default class MonthPicker extends Component {
                     <div className="rmp-cell">
                         <div className={["rmp-popup", popupClass , this.props.theme, (this.state.showed ? "show" : '')].join(' ')}>
                             {pads}
+                            {this.props.renderFooter()}
                         </div>
                     </div>
                 </div>

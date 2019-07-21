@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import ReactDOM from 'react-dom'
 import DocReady from 'es6-docready'
 import Dom from 'es6-dom'
-import Picker from 'month-picker'
+import Picker from '../src/month-picker'
 
     
     
@@ -120,6 +120,9 @@ DocReady(function() {
                                 lang={pickerLang.months}
                                 onChange={this.handleAMonthChange}
                                 onDismiss={this.handleAMonthDissmis}
+                                renderFooter={() => (
+                                    <div>hahahah</div>
+                                )}
                             >
                                 <MonthBox value={makeText(mvalue)} onClick={this.handleClickMonthBox} />
                             </Picker>

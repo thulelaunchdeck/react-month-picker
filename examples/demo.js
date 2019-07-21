@@ -258,7 +258,14 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
                                     value: mvalue,
                                     lang: pickerLang.months,
                                     onChange: this.handleAMonthChange,
-                                    onDismiss: this.handleAMonthDissmis
+                                    onDismiss: this.handleAMonthDissmis,
+                                    renderFooter: function renderFooter() {
+                                        return _react2.default.createElement(
+                                            'div',
+                                            null,
+                                            'hahahah'
+                                        );
+                                    }
                                 },
                                 _react2.default.createElement(MonthBox, { value: makeText(mvalue), onClick: this.handleClickMonthBox })
                             )
@@ -1049,7 +1056,8 @@ var MonthPicker = function (_Component) {
                         _react2.default.createElement(
                             'div',
                             { className: ["rmp-popup", popupClass, this.props.theme, this.state.showed ? "show" : ''].join(' ') },
-                            pads
+                            pads,
+                            this.props.renderFooter()
                         )
                     )
                 )
@@ -1173,14 +1181,16 @@ MonthPicker.propTypes = {
     onDismiss: _propTypes2.default.func,
     onClickAway: _propTypes2.default.func,
     theme: _propTypes2.default.string,
-    show: _propTypes2.default.bool
+    show: _propTypes2.default.bool,
+    renderFooter: _propTypes2.default.func
 };
 MonthPicker.defaultProps = {
     years: getYearsByNum(5),
     onChange: function onChange(year, month, idx) {},
 
     theme: 'light',
-    show: false
+    show: false,
+    renderFooter: function renderFooter() {}
 };
 exports.default = MonthPicker;
 
